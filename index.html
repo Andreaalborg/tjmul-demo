@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Tjernæs Multiservice - Din komplette entreprenør i Østfold. Gravearbeider, drenering, støttemurer, snøbrøyting og mer. Ring 952 74 537 for gratis befaring.">
+    <meta name="theme-color" content="#f39c12">
+    <title>Tjernæs Multiservice - Din komplette entreprenør i Østfold</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #f39c12;
+            --accent-color: #e67e22;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #f8f9fa;
+            --bg-dark: #2c3e50;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .cta-button {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .phone-text {
+            display: inline;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: var(--secondary-color);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-weight: 300;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .hero-button {
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .hero-button.primary {
+            background: var(--secondary-color);
+            color: white;
+            border: 2px solid var(--secondary-color);
+        }
+
+        .hero-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .hero-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .hero-button.primary:hover {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        /* Services Grid */
+        .services {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+            max-width: 600px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            height: 400px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .service-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 2.5rem 2rem;
+            color: white;
+        }
+
+        .service-icon {
+            width: 40px;
+            height: 40px;
+            fill: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .service-description {
+            opacity: 0.9;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        /* Info Cards */
+        .info-section {
+            padding: 5rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .info-cards {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0;
+        }
+
+        .info-card {
+            background: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-right: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:last-child {
+            border-right: none;
+        }
+
+        .info-card:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 1.5rem;
+            fill: var(--secondary-color);
+        }
+
+        .info-card:hover .info-icon {
+            fill: white;
+        }
+
+        .info-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card:hover .info-number {
+            color: white;
+        }
+
+        .info-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            letter-spacing: -1px;
+        }
+
+        .about-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .check-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--secondary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 5rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+            color: white;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 2rem;
+            background: var(--primary-color);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cta-phone {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            letter-spacing: -1px;
+        }
+
+        .contact-details {
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            fill: var(--secondary-color);
+            flex-shrink: 0;
+        }
+
+        .contact-info-text {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .contact-value {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .contact-form {
+            background: var(--bg-light);
+            padding: 3rem;
+            border-radius: 4px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            background: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-button:hover {
+            background: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .footer-brand span {
+            color: var(--secondary-color);
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--secondary-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            padding: 1rem 0;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 1rem 2rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            background: var(--bg-light);
+            color: var(--secondary-color);
+            padding-left: 2.5rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            /* Navigation */
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .cta-button {
+                display: none; /* Hide phone button on mobile */
+            }
+
+            /* Hero Section */
+            .hero {
+                min-height: 100vh;
+                padding: 2rem 1rem;
+                background-position: 70% center;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+                line-height: 1.2;
+                margin-bottom: 1rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+                gap: 1rem;
+            }
+
+            .hero-button {
+                width: 100%;
+                text-align: center;
+                padding: 1.2rem 2rem;
+                font-size: 1rem;
+            }
+
+            /* Info Cards */
+            .info-cards {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0;
+            }
+
+            .info-card {
+                border-right: 1px solid #e0e0e0;
+                border-bottom: 1px solid #e0e0e0;
+                padding: 2rem 1rem;
+            }
+
+            .info-card:nth-child(even) {
+                border-right: none;
+            }
+
+            .info-card:nth-child(3), .info-card:nth-child(4) {
+                border-bottom: none;
+            }
+
+            .info-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .info-number {
+                font-size: 2.5rem;
+            }
+
+            .info-label {
+                font-size: 0.9rem;
+            }
+
+            /* Services */
+            .services {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+                padding: 0 1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .service-card {
+                height: 350px;
+            }
+
+            .service-overlay {
+                padding: 2rem 1.5rem;
+            }
+
+            .service-icon {
+                width: 35px;
+                height: 35px;
+            }
+
+            .service-title {
+                font-size: 1.3rem;
+            }
+
+            .service-description {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            /* About Section */
+            .about {
+                padding: 3rem 1rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-content h2 {
+                font-size: 2rem;
+            }
+
+            .about-content p {
+                font-size: 1rem;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            /* Projects */
+            .projects {
+                padding: 3rem 1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .project-card {
+                height: 250px;
+            }
+
+            /* CTA Section */
+            .cta-section {
+                padding: 3rem 1rem;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+
+            .cta-text {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .cta-phone {
+                font-size: 1.8rem;
+            }
+
+            /* Contact Section - Mobile */
+            .contact {
+                padding: 3rem 1rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-info h2 {
+                font-size: 2rem;
+            }
+
+            .contact-item {
+                padding-bottom: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 1.2rem 1rem;
+                font-size: 16px; /* Prevents zoom on iOS */
+                border-radius: 8px;
+            }
+
+            .submit-button {
+                padding: 1.2rem 2rem;
+                font-size: 1.1rem;
+            }
+
+            /* Footer */
+            footer {
+                padding: 2rem 1rem;
+                padding-bottom: 4rem; /* Extra padding for fixed mobile CTA */
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .footer-brand h3 {
+                font-size: 1.5rem;
+            }
+
+            .footer-section h4 {
+                margin-top: 1.5rem;
+            }
+
+            .footer-bottom {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.7rem;
+            }
+
+            .info-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .info-card {
+                border-right: none;
+            }
+
+            .info-card:not(:last-child) {
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .service-card {
+                height: 320px;
+            }
+
+            .cta-phone {
+                font-size: 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.1rem;
+            }
+
+            .logo span {
+                display: block;
+                font-size: 0.85rem;
+                margin-top: -0.2rem;
+            }
+        }
+
+        /* Touch-friendly adjustments */
+        @media (hover: none) {
+            .nav-links a:hover::after {
+                width: 0;
+            }
+
+            .service-card:hover {
+                transform: none;
+            }
+
+            .info-card:hover {
+                background: white;
+                color: var(--text-dark);
+            }
+
+            .info-card:hover .info-icon {
+                fill: var(--secondary-color);
+            }
+
+            .info-card:hover .info-number {
+                color: var(--primary-color);
+            }
+
+            .hero-button:hover,
+            .cta-button:hover,
+            .submit-button:hover {
+                transform: none;
+            }
+            
+            /* Larger touch targets for mobile */
+            .hero-button,
+            .submit-button {
+                min-height: 48px;
+            }
+            
+            .mobile-menu a {
+                min-height: 48px;
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        /* Fixed mobile CTA button */
+        .mobile-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--secondary-color);
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+            z-index: 998;
+        }
+
+        .mobile-cta a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-cta {
+                display: block;
+            }
+
+            /* Add padding to bottom of page to account for fixed CTA */
+            body {
+                padding-bottom: 60px;
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        /* Better print styles */
+        @media print {
+            nav, .hero-buttons, .cta-section, .contact-form, .mobile-cta, footer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                TJERNÆS<span>MULTISERVICE</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hjem">Hjem</a></li>
+                <li><a href="#tjenester">Tjenester</a></li>
+                <li><a href="#prosjekter">Prosjekter</a></li>
+                <li><a href="#om-oss">Om oss</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a href="tel:+4795274537" class="cta-button">
+                <svg style="width: 16px; height: 16px; vertical-align: middle; margin-right: 6px; fill: white;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z"/>
+                </svg>
+                <span class="phone-text">952 74 537</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#hjem" onclick="closeMobileMenu()">Hjem</a>
+        <a href="#tjenester" onclick="closeMobileMenu()">Tjenester</a>
+        <a href="#prosjekter" onclick="closeMobileMenu()">Prosjekter</a>
+        <a href="#om-oss" onclick="closeMobileMenu()">Om oss</a>
+        <a href="#kontakt" onclick="closeMobileMenu()">Kontakt</a>
+        <a href="tel:+4795274537" style="background: var(--secondary-color); color: white; margin: 1rem 2rem; text-align: center; border-radius: 4px;">Ring oss: 952 74 537</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hjem">
+        <div class="hero-content">
+            <h1>ENTREPRENØR MED<br><span>BRED KOMPETANSE</span></h1>
+            <p class="hero-subtitle">Vi utfører alt fra gravearbeider til komplette anleggsprosjekter. Med over 15 års erfaring leverer vi kvalitet til avtalt tid og pris.</p>
+            <div class="hero-buttons">
+                <a href="#tjenester" class="hero-button primary">Våre tjenester</a>
+                <a href="#kontakt" class="hero-button secondary">Få pristilbud</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Cards -->
+    <section class="info-section">
+        <div class="info-cards">
+            <div class="info-card">
+                <svg class="info-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C10.02 2 8.13 2.75 6.7 4.05L9.53 6.88C10.21 6.33 11.06 6 12 6C14.21 6 16 7.79 16 10C16 12.21 14.21 14 12 14C9.79 14 8 12.21 8 10C8 9.06 8.33 8.21 8.88 7.53L6.05 4.7C4.75 6.13 4 8.02 4 10C4 14.42 7.58 18 12 18H13V22H11V20C6.48 20 3 16.52 3 12C3 7.48 6.48 4 11 4V2H13V6H12C14.76 6 17 8.24 17 11V12H19V10C19 6.13 15.87 3 12 3V2Z" fill="currentColor"/>
+                </svg>
+                <div class="info-number">15+</div>
+                <div class="info-label">Års erfaring</div>
+            </div>
+            <div class="info-card">
+                <svg class="info-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 4C13.11 4 14 4.89 14 6C14 7.11 13.11 8 12 8C10.89 8 10 7.11 10 6C10 4.89 10.89 4 12 4M12 10C16.42 10 20 11.79 20 14V17H4V14C4 11.79 7.58 10 12 10Z" fill="currentColor"/>
+                </svg>
+                <div class="info-number">500+</div>
+                <div class="info-label">Fornøyde kunder</div>
+            </div>
+            <div class="info-card">
+                <svg class="info-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20M16.59 7.58L10 14.17L7.41 11.59L6 13L10 17L18 9L16.59 7.58Z" fill="currentColor"/>
+                </svg>
+                <div class="info-number">24/7</div>
+                <div class="info-label">Akuttberedskap</div>
+            </div>
+            <div class="info-card">
+                <svg class="info-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 17L6 13L7.41 11.59L10 14.17L16.59 7.58L18 9M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" fill="currentColor"/>
+                </svg>
+                <div class="info-number">100%</div>
+                <div class="info-label">Forsikret</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="tjenester">
+        <div class="services-container">
+            <h2 class="section-title">VÅRE TJENESTER</h2>
+            <p class="section-subtitle">Fra små hagejobber til store anleggsprosjekter - vi har kompetansen og utstyret som trengs</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22df86bdde?q=80&w=2070" alt="Gravearbeider" class="service-image">
+                    <div class="service-overlay">
+                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 10H7V8L3 11.5L7 15V13H17V15L21 11.5L17 8V10M7 3H17C18.1 3 19 3.9 19 5V7H5V5C5 3.9 5.9 3 7 3M19 19V17H5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19Z" fill="currentColor"/>
+                        </svg>
+                        <h3 class="service-title">Gravearbeider & Masseforflytting</h3>
+                        <p class="service-description">Profesjonelle gravetjenester med moderne maskiner. Vi utfører alt fra tomtegraving til VA-anlegg og fundamentering.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070" alt="Drenering" class="service-image">
+                    <div class="service-overlay">
+                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 3.77L11.25 4.61C11.25 4.61 9.97 6.06 8.68 7.94C7.39 9.82 6 12.07 6 14.23C6 14.23 6 14.23 6 14.23C6 17.45 8.69 20 12 20C15.31 20 18 17.45 18 14.23C18 12.07 16.61 9.82 15.32 7.94C14.03 6.06 12.75 4.61 12.75 4.61L12 3.77M12 6.9C12.44 7.42 12.84 7.85 13.19 8.4C14.45 10.24 15.5 11.96 15.5 14.23C15.5 16.08 13.93 17.5 12 17.5C10.07 17.5 8.5 16.08 8.5 14.23C8.5 11.96 9.55 10.24 10.81 8.4C11.16 7.85 11.56 7.42 12 6.9Z" fill="currentColor"/>
+                        </svg>
+                        <h3 class="service-title">Drenering & VA-arbeider</h3>
+                        <p class="service-description">Komplett drenering av bygninger og tomter. Vi sikrer riktig fall og bruker godkjente materialer for varige løsninger.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2070" alt="Steinarbeider" class="service-image">
+                    <div class="service-overlay">
+                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3V11H11V3H3M13 3V7H21V3H13M13 9V11H21V9H13M3 13V21H11V13H3M13 13V15H21V13H13M13 17V21H21V17H13Z" fill="currentColor"/>
+                        </svg>
+                        <h3 class="service-title">Støttemurer & Steinarbeider</h3>
+                        <p class="service-description">Bygging av solide støttemurer og dekorative steinarbeider. Vi kombinerer funksjon med estetikk.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1584289537662-41e9a58f5f5d?q=80&w=2070" alt="Betongarbeider" class="service-image">
+                    <div class="service-overlay">
+                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.5 2H5.5C4.67 2 4 2.67 4 3.5V6.5C4 7.33 4.67 8 5.5 8H18.5C19.33 8 20 7.33 20 6.5V3.5C20 2.67 19.33 2 18.5 2M9 6H7V4H9V6M13 6H11V4H13V6M17 6H15V4H17V6M18.5 9H5.5C4.67 9 4 9.67 4 10.5V13.5C4 14.33 4.67 15 5.5 15H18.5C19.33 15 20 14.33 20 13.5V10.5C20 9.67 19.33 9 18.5 9M9 13H7V11H9V13M13 13H11V11H13V13M17 13H15V11H17V13M18.5 16H5.5C4.67 16 4 16.67 4 17.5V20.5C4 21.33 4.67 22 5.5 22H18.5C19.33 22 20 21.33 20 20.5V17.5C20 16.67 19.33 16 18.5 16M9 20H7V18H9V20M13 20H11V18H13V20M17 20H15V18H17V20Z" fill="currentColor"/>
+                        </svg>
+                        <h3 class="service-title">Betongarbeider & Støping</h3>
+                        <p class="service-description">Alt innen betongarbeid fra gulv til fundamenter. Vi leverer støpearbeider av høy kvalitet.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?q=80&w=2070" alt="Snøbrøyting" class="service-image">
+                    <div class="service-overlay">
+                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.79 13.95L18.46 14.57L16.46 13.44V10.56L18.46 9.43L20.79 10.05L21.31 8.12L19.54 7.65L20.74 5.42L19.03 4.29L17.83 6.53L16.14 6.09L16.27 5.2L18.6 3.58L17.45 2L15.81 3.05L15.95 1.04L13.95 0.96L13.82 2.97L12.18 2L11.03 3.58L13.36 5.2L13.5 6.09L11.81 6.53L10.61 4.29L8.9 5.42L10.1 7.65L8.33 8.12L8.85 10.05L11.18 9.43L13.18 10.56V13.44L11.18 14.57L8.85 13.95L8.33 15.88L10.1 16.35L8.9 18.58L10.61 19.71L11.81 17.47L13.5 17.91L13.36 18.8L11.03 20.42L12.18 22L13.82 21.03L13.95 23.04L15.95 22.96L16.08 20.95L17.72 22L18.87 20.42L16.54 18.8L16.4 17.91L18.09 17.47L19.29 19.71L21 18.58L19.8 16.35L21.57 15.88L21.05 13.95M12 10.5C10.62 10.5 9.5 11.62 9.5 13C9.5 14.38 10.62 15.5 12 15.5C13.38 15.5 14.5 14.38 14.5 13C14.5 11.62 13.38 10.5 12 10.5Z" fill="currentColor"/>
+                        </svg>
+                        <h3 class="service-title">Snøbrøyting & Vintervedlikehold</h3>
+                        <p class="service-description">Pålitelig vintervedlikehold med moderne utstyr. Vi tilbyr faste avtaler for bedrifter og borettslag.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1597526661663-2c10e01e7a5f?q=80&w=2070" alt="Riving" class="service-image">
+                    <div class="service-overlay">
+                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.12 10L16.04 8.92L13.5 11.46L13.96 10.54L15.04 11.62L16.12 10.54L17.04 11.46L18.12 10.38L17.04 9.3L17.96 8.38L19.04 9.46L20.12 8.38L19.04 7.3L16.5 9.84L15.42 8.76L17.96 6.22L16.88 5.14L14.34 7.68L13.26 6.6L12.18 7.68L13.26 8.76L11.18 10.84L10.1 9.76L8.02 11.84L7.02 10.84L4 13.86L5.14 15L6.14 14L7.14 15L10.16 11.98L11.16 12.98L7.14 17H12V21H16V17H20L17.12 10Z" fill="currentColor"/>
+                        </svg>
+                        <h3 class="service-title">Riving & Sanering</h3>
+                        <p class="service-description">Sikker og effektiv riving av bygninger og konstruksjoner. Vi håndterer alle typer rivingsoppdrag.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="om-oss">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>HVORFOR VELGE TJERNÆS MULTISERVICE?</h2>
+                <p>Tjernæs Multiservice har gjennom planlegging og gjennomføring av et vidt spekter av arbeidsoppgaver bygget kompetanse som sikrer solid, fagmessig og korrekt utførte oppdrag.</p>
+                <p>Med kompetanse innen flere ulike fagområder dokumenterer vi valget av navnet Multiservice. Vi samarbeider med anerkjente partnere som Alt-mann og Rope Rescue Norway for spesialiserte oppdrag.</p>
+                
+                <div class="about-features">
+                    <div class="about-feature">
+                        <div class="check-icon">✓</div>
+                        <span>Godkjent entreprenør</span>
+                    </div>
+                    <div class="about-feature">
+                        <div class="check-icon">✓</div>
+                        <span>Fullt forsikret</span>
+                    </div>
+                    <div class="about-feature">
+                        <div class="check-icon">✓</div>
+                        <span>Fast pris garanti</span>
+                    </div>
+                    <div class="about-feature">
+                        <div class="check-icon">✓</div>
+                        <span>Miljøsertifisert</span>
+                    </div>
+                </div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070" alt="Om oss" class="about-image">
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="prosjekter">
+        <div class="projects-container">
+            <h2 class="section-title">REFERANSEPROSJEKTER</h2>
+            <p class="section-subtitle">Et utvalg av våre gjennomførte prosjekter</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1503387837-b154d5074bd2?q=80&w=2070" alt="Prosjekt 1" class="project-image">
+                    <div class="project-overlay">
+                        <h3 class="project-title">Komplett tomteklargjøring Fredrikstad</h3>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1574482620811-1aa16ffe3c82?q=80&w=2070" alt="Prosjekt 2" class="project-image">
+                    <div class="project-overlay">
+                        <h3 class="project-title">VA-anlegg og drenering Moss</h3>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1621905251918-48416605c7b3?q=80&w=2070" alt="Prosjekt 3" class="project-image">
+                    <div class="project-overlay">
+                        <h3 class="project-title">Støttemur og platting Sarpsborg</h3>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070" alt="Prosjekt 4" class="project-image">
+                    <div class="project-overlay">
+                        <h3 class="project-title">Industribygg fundamentering Halden</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title">HAR DU ET PROSJEKT?</h2>
+            <p class="cta-text">Vi gir deg gratis befaring og uforpliktende pristilbud på alle typer oppdrag</p>
+            <div class="cta-buttons">
+                <a href="#kontakt" class="hero-button primary" style="background: var(--secondary-color); border-color: var(--secondary-color);">Få pristilbud</a>
+                <div class="cta-phone">952 74 537</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="kontakt">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>KONTAKT OSS</h2>
+                <p style="color: var(--text-light); margin-bottom: 2rem;">Vi er tilgjengelige for både store anbudsjobber og mindre privatoppdrag. Ta kontakt for en uforpliktende prat om ditt prosjekt.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z" fill="currentColor"/>
+                        </svg>
+                        <div class="contact-info-text">
+                            <div class="contact-label">Telefon</div>
+                            <div class="contact-value">+47 952 74 537</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4M20 8L12 13L4 8V6L12 11L20 6V8Z" fill="currentColor"/>
+                        </svg>
+                        <div class="contact-info-text">
+                            <div class="contact-label">E-post</div>
+                            <div class="contact-value">post@tjernaesmultiservice.no</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2M12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="currentColor"/>
+                        </svg>
+                        <div class="contact-info-text">
+                            <div class="contact-label">Adresse</div>
+                            <div class="contact-value">Roald Amundsens vei<br>1420 Svartskog</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 3H14.82C14.4 1.84 13.3 1 12 1C10.7 1 9.6 1.84 9.18 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3M12 3C12.55 3 13 3.45 13 4C13 4.55 12.55 5 12 5C11.45 5 11 4.55 11 4C11 3.45 11.45 3 12 3M7 7H17V5H19V19H5V5H7V7Z" fill="currentColor"/>
+                        </svg>
+                        <div class="contact-info-text">
+                            <div class="contact-label">Organisasjonsnummer</div>
+                            <div class="contact-value">921 XXX XXX</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Navn</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-post</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="project">Type prosjekt</label>
+                        <input type="text" id="project" name="project" placeholder="F.eks. graving, drenering, støttemur">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Beskrivelse</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send forespørsel</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>TJERNÆS<span>MULTISERVICE</span></h3>
+                <p>Din lokale entreprenør med bred kompetanse og lang erfaring. Vi leverer kvalitet til avtalt tid og pris.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Tjenester</h4>
+                <ul>
+                    <li><a href="#tjenester">Gravearbeider</a></li>
+                    <li><a href="#tjenester">Drenering</a></li>
+                    <li><a href="#tjenester">Støttemurer</a></li>
+                    <li><a href="#tjenester">Snøbrøyting</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Informasjon</h4>
+                <ul>
+                    <li><a href="#om-oss">Om oss</a></li>
+                    <li><a href="#prosjekter">Referanser</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                    <li><a href="#">Anbudsskjema</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Samarbeidspartnere</h4>
+                <ul>
+                    <li><a href="#">Alt-mann</a></li>
+                    <li><a href="#">Rope Rescue Norway</a></li>
+                    <li><a href="#">Lokale leverandører</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tjernæs Multiservice AS. Alle rettigheter forbeholdt. Utviklet av [Din bedrift]</p>
+        </div>
+    </footer>
+
+    <!-- Fixed Mobile CTA -->
+    <div class="mobile-cta">
+        <a href="tel:+4795274537">
+            <svg style="width: 20px; height: 20px; fill: white;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z"/>
+            </svg>
+            Ring for gratis befaring: 952 74 537
+        </a>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        function closeMobileMenu() {
+            mobileMenuBtn.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // Close mobile menu if open
+                    closeMobileMenu();
+                    // Smooth scroll with offset for fixed nav
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Takk for din henvendelse! Vi kontakter deg innen 24 timer.');
+            this.reset();
+        });
+
+        // Parallax effect on hero - only on desktop
+        if (window.innerWidth > 768) {
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.hero');
+                hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+            });
+        }
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .project-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Only animate info cards on desktop
+        if (window.innerWidth > 768) {
+            document.querySelectorAll('.info-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                closeMobileMenu();
+            }
+        });
+
+        // Handle resize events
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+    </script>
+</body>
+</html>
